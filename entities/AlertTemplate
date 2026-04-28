@@ -1,0 +1,61 @@
+{
+  "name": "AlertTemplate",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "incident_type": {
+      "type": "string",
+      "enum": [
+        "fire",
+        "medical",
+        "security",
+        "natural_disaster",
+        "hazmat",
+        "active_threat",
+        "utility_failure",
+        "other"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "message_template": {
+      "type": "string"
+    },
+    "channels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "auto_trigger": {
+      "type": "boolean",
+      "default": false
+    },
+    "sop_steps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "name",
+    "incident_type",
+    "message_template"
+  ]
+}
